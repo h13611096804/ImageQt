@@ -22,6 +22,7 @@
 #include "dialog_exp_transform.h"
 #include "dialog_two_threshold_transform.h"
 #include "dialog_stretch_transform.h"
+#include "dialog_hsv_transform.h"
 
 #define WINDOW_TITLE    "ImageQt"
 #define WINDOW_CRITICAL "Error - ImageQt"
@@ -57,6 +58,7 @@ private slots:
     void receiveExpGreyParamter(double, double, double);
     void receiveTwoThresholdParamter(int, int, int);
     void receiveStretchParamter(int, int, double,double,double,double,double);
+    void receiveHsvTransformParamter(double*, double*, double*, double*, double*, double*);
 
     // On action triggered
     void on_actionOpen_triggered();

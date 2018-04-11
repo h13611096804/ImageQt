@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>565</width>
-    <height>356</height>
+    <width>558</width>
+    <height>363</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -35,7 +35,7 @@
               <string/>
              </property>
              <property name="pixmap">
-              <pixmap>:/img/src/fun_exp.png</pixmap>
+              <pixmap resource="default.qrc">:/img/src/fun_exp.png</pixmap>
              </property>
             </widget>
            </item>
@@ -163,7 +163,9 @@
    <container>1</container>
   </customwidget>
  </customwidgets>
- <resources/>
+ <resources>
+  <include location="default.qrc"/>
+ </resources>
  <connections>
   <connection>
    <sender>buttonBox</sender>
@@ -172,8 +174,8 @@
    <slot>accept()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>248</x>
-     <y>254</y>
+     <x>533</x>
+     <y>349</y>
     </hint>
     <hint type="destinationlabel">
      <x>157</x>
@@ -188,8 +190,8 @@
    <slot>reject()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>316</x>
-     <y>260</y>
+     <x>544</x>
+     <y>349</y>
     </hint>
     <hint type="destinationlabel">
      <x>286</x>

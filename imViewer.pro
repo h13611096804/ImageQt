@@ -38,7 +38,8 @@ SOURCES += main.cpp\
     dialog_stretch_transform.cpp \
     gaussianblur.cpp \
     medianfilter.cpp \
-    graphicsview.cpp
+    graphicsview.cpp \
+    dialog_hsv_transform.cpp
 
 HEADERS  += mainwindow.h \
     tools.h \
@@ -53,7 +54,8 @@ HEADERS  += mainwindow.h \
     dialog_stretch_transform.h \
     gaussianblur.h \
     medianfilter.h \
-    graphicsview.h
+    graphicsview.h \
+    dialog_hsv_transform.h
 
 FORMS    += mainwindow.ui \
     gaussianblurdialog.ui \
@@ -62,7 +64,8 @@ FORMS    += mainwindow.ui \
     dialog_power_grey.ui \
     dialog_exp_transform.ui \
     dialog_two_threshold_transform.ui \
-    dialog_stretch_transform.ui
+    dialog_stretch_transform.ui \
+    dialog_hsv_transform.ui
 
 RESOURCES += \
     default.qrc

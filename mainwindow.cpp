@@ -190,7 +190,7 @@ void MainWindow::receiveGaussianFactor(int radius, double sigma)
     updateRightImage(rightImage);
 }
 
-///******************************************************************************
+//******************************************************************************
 // *                   Receive data from zoom dialog
 // *             and then call the function to done zoom action
 // *****************************************************************************/
@@ -652,27 +652,27 @@ void MainWindow::on_actionMeida_Filter_triggered()
 void MainWindow::on_actionLeft_triggered()
 {
 
-    bool ok;
-    int factor = QInputDialog::getInt(this, tr("旋转"), "请输入要旋转的角度",0,-360,360,10,&ok);
-    if (ok)
-    {
-        if (factor != 0)
-        {
-            QPixmap rightImage = rightPixmapItem->pixmap();
+//    bool ok;
+//    int factor = QInputDialog::getInt(this, tr("旋转"), "请输入要旋转的角度",0,-360,360,10,&ok);
+//    if (ok)
+//    {
+//        if (factor != 0)
+//        {
+//            QPixmap rightImage = rightPixmapItem->pixmap();
 
-            QImage *imgRotate = new QImage;
-            QMatrix matrix;
-            matrix.rotate(factor);
-            *imgRotate = rightImage.toImage().transformed(matrix);
-            QPixmap newPixmap;
-            newPixmap = QPixmap::fromImage(*imgRotate);
-            updateRightImage(newPixmap);
-        }
-        else
-        {
-            return;
-        }
-    }
+//            QImage *imgRotate = new QImage;
+//            QMatrix matrix;
+//            matrix.rotate(factor);
+//            *imgRotate = rightImage.toImage().transformed(matrix);
+//            QPixmap newPixmap;
+//            newPixmap = QPixmap::fromImage(*imgRotate);
+//            updateRightImage(newPixmap);
+//        }
+//        else
+//        {
+//            return;
+//        }
+//    }
 
 }
 
@@ -1083,21 +1083,28 @@ void MainWindow::on_actionThinning_triggered()
 
     updateRightImage(rightImage);
 }
-
-
-void MainWindow::on_actionRGB2HSV_triggered()
+void MainWindow::receiveHsvTransformParamter(double *h_f, double *h_b, double *s_f, double *s_b, double *v_f, double *v_b)
 {
-    QPixmap rightImage = rightPixmapItem->pixmap();
-    QImage newImage = Tools::RGB2HSV(rightImage.toImage());
+    //QPixmap rightImage = rightPixmapItem->pixmap();
+    QPixmap rightImage = leftPixmapItem->pixmap();
+    QImage newImage = Tools::RGB2HSV(rightImage.toImage(),h_f, h_b, s_f, s_b ,v_f ,v_b);
     rightImage.convertFromImage(newImage);
 
     updateRightImage(rightImage);
 }
 
+void MainWindow::on_actionRGB2HSV_triggered()
+{
+    DialogHsvTransform dialog;
+    connect(&dialog, SIGNAL(sendData(double*, double*, double*, double*, double*, double*)),
+            this, SLOT(receiveHsvTransformParamter(double*, double*, double*, double*, double*, double*)));
+    dialog.exec();
+}
 
 
 void MainWindow::on_actionRGB2HSL_triggered()
 {
+
     QPixmap rightImage = rightPixmapItem->pixmap();
     QImage newImage = Tools::RGB2HSL(rightImage.toImage());
     rightImage.convertFromImage(newImage);

@@ -49,7 +49,7 @@ QImage Expansion(const QImage &origin);
 QImage Opening(const QImage &origin);
 QImage Closing(const QImage &origin);
 QImage Thinning(const QImage &origin);
-QImage RGB2HSV(const QImage &origin);
+QImage RGB2HSV(const QImage &origin, double *h_f, double *h_b, double *s_f, double *s_b, double *v_f, double *v_b);
 QImage RGB2HSL(const QImage &origin);
 QImage RGB2CMYK(const QImage &origin);
 QImage Final(const QImage &origin);

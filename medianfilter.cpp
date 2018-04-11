@@ -45,7 +45,7 @@ void getResPixelValueST(IndexPair &p)
 void MedianFilter::getResPixelValue(IndexPair &p)
 {
     int k = 0, workingWeight = originImageweight+2*radius;
-    element window[windowSize];
+    element *window = new element[windowSize];
 
     for (int i = p.i - radius; i < p.i + radius+1; i++)
     {
