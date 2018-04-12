@@ -27,44 +27,16 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += main.cpp\
         mainwindow.cpp \
     tools.cpp \
-    dialog_gaussianblur.cpp \
-    histogram.cpp \
-    dialog_linear_gray.cpp \
-    qcustomplot.cpp \
-    dialog_log_grey.cpp \
-    dialog_power_grey.cpp \
-    dialog_exp_transform.cpp \
-    dialog_two_threshold_transform.cpp \
-    dialog_stretch_transform.cpp \
-    gaussianblur.cpp \
-    medianfilter.cpp \
-    graphicsview.cpp \
-    dialog_hsv_transform.cpp
+    dialog_hsv_transform.cpp \
+    graphicsview.cpp
+
 
 HEADERS  += mainwindow.h \
     tools.h \
-    dialog_gaussianblur.h \
-    histogram.h \
-    dialog_linear_gray.h \
-    qcustomplot.h \
-    dialog_log_grey.h \
-    dialog_power_grey.h \
-    dialog_exp_transform.h \
-    dialog_two_threshold_transform.h \
-    dialog_stretch_transform.h \
-    gaussianblur.h \
-    medianfilter.h \
-    graphicsview.h \
-    dialog_hsv_transform.h
+    dialog_hsv_transform.h \
+    graphicsview.h
 
 FORMS    += mainwindow.ui \
-    gaussianblurdialog.ui \
-    dialog_linear_gray.ui \
-    dialog_log_grey.ui \
-    dialog_power_grey.ui \
-    dialog_exp_transform.ui \
-    dialog_two_threshold_transform.ui \
-    dialog_stretch_transform.ui \
     dialog_hsv_transform.ui
 
 RESOURCES += \
